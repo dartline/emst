@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon" >
+    <title>{GetUserName()}: ���������</title>
+    <style>
+        .ui-state-disabled { cursor: default !important; }
+        .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -khtml-border-top-left-radius: 5px; border-top-left-radius: 5px; }
+        .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr { -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; -khtml-border-top-right-radius: 5px; border-top-right-radius: 5px; }
+        .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl { -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; -khtml-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; }
+        .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
+     </style>
+    <script language="javascript"><!--
+
+
+
+    function splitDate(aDate)
+    {
+        var parts = aDate.split('-');
+        return { 'year':parseInt(parts[0],10),
+                 'month':parseInt(parts[1],10),
+                 'day':parseInt(parts[2],10) };
+    }
+
+    function onSelect(aItem)
+    {
+        opener.document.frmItem['first_name'].value = aItem['first_name'];
+        opener.document.frmItem['last_name'].value  = aItem['last_name'];
+        opener.document.frmItem['patr_name'].value  = aItem['patr_name'];
+        opener.document.frmItem['is_male'].value    = aItem['sex'];
+        var d = splitDate(aItem['born_date']);
+        opener.document.frmItem['born_date[d]'].value= d.day;
+        opener.document.frmItem['born_date[M]'].value= d.month;
+        opener.document.frmItem['born_date[Y]'].value= d.year;
+        opener.document.frmItem['doc_type_id'].value = aItem['doc_type_id'];
+        opener.document.frmItem['doc_series'].value = aItem['doc_series'];
+        opener.document.frmItem['doc_number'].value = aItem['doc_number'];
+        opener.document.frmItem['addr_reg_street'].value = aItem['reg_street_name'] + ' ' + aItem['reg_street_type'];
+        opener.document.frmItem['addr_reg_num'].value = aItem['reg_number'];
+        opener.document.frmItem['addr_reg_subnum'].value = aItem['reg_corpus'];
+        opener.document.frmItem['addr_reg_apartment'].value = aItem['reg_flat'];
+        opener.document.frmItem['addr_phys_street'].value = aItem['loc_street_name'] + ' ' + aItem['loc_street_type'];
+        opener.document.frmItem['addr_phys_num'].value = aItem['loc_number'];
+        opener.document.frmItem['addr_phys_subnum'].value = aItem['loc_corpus'];
+        opener.document.frmItem['addr_phys_apartment'].value = aItem['loc_flat'];
+        opener.document.frmItem['insurance_company_id'].value = aItem['insurance_company_id'];
+        opener.document.frmItem['polis_series'].value = aItem['polis_series'];
+        opener.document.frmItem['polis_number'].value = aItem['polis_number'];
+
+        opener.document.frmItem['phone'].value = aItem['phone'];
+
+        window.close();
+    }
+
+    function onCancel(aItem)
+    {
+        window.close();
+    }
+
+    --></script>
+  </head>
+
+  <body>
+    <h1>���������</h1>
+    {form.outputHeader():h}
+      {form.hidden:h}
+    <form id="cardForm" method="get" action="search_client_popup.php">
+      <div id="cardFormDiv">
+      <table class=maintable>
+        <tr>
+          <th colspan="6">{form.header.Header:h}</th>
+        </tr>
+        <tr>
+          <td class="label"  > {form.last_name.label:h} </td>
+          <td class="control" colspan="5"> {form.last_name.html:h}  </td>
+        </tr>
+        <tr>
+          <td class="label"  > {form.first_name.label:h} </td>
+          <td class="control" colspan="5"> {form.first_name.html:h}  </td>
+        </tr>
+        <tr>
+          <td class="label"  > {form.patr_name.label:h} </td>
+          <td class="control" colspan="5"> {form.patr_name.html:h}  </td>
+        </tr>
+        <tr>
+          <td class="label"  > {form.doc_type_id.label:h} </td>
+          <td class="control"> {form.doc_type_id.html:h}  </td>
+          <td class="label"  > {form.doc_series.label:h}  </td>
+          <td class="control"> {form.doc_series.html:h}   </td>
+          <td class="label"  > {form.doc_number.label:h}  </td>
+          <td class="control"> {form.doc_number.html:h}   </td>
+        </tr>
+        <tr>
+          <td class="label"  > {form.insurance_company_id.label:h}</td>
+          <td class="control"> {form.insurance_company_id.html:h}</td>
+          <td class="label"  > {form.polis_series.label:h}</td>
+          <td class="control"> {form.polis_series.html:h}</td>
+          <td class="label"  > {form.polis_number.label:h}</td>
+          <td class="control"> {form.polis_number.html:h}</td>
+        </tr>
+
+
+        <tr>
+          <td colspan="6"><hr></td>
+        </tr>
+        <tr>
+          <td align="right" colspan="6">{form.Submit.html:h}</td>
+        </tr>
+      </table>
+        <fieldset class="ui-corner-all" id="patientResulteFset" style="visibility: visible;width:420px;">
+            <legend>��������� ��������</legend>
+            <div id="patientResult" style="height: 100px;overflow: auto;">
+
+            </div>
+        </fieldset>
+     </div>
+        <button type="submit" onclick="$('#cardFormAction').val($(this).val());" value="checkPolis" name="action">��������� ����� � �����</button>
+    </form>
+    {GetTable():h}
+  </body>
+</html>

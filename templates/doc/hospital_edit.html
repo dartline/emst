@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon" >
+    <title>{GetUserName()}: Врач: Сведения из стационара</title>
+  </head>
+
+  <body>
+    <table cellspacing="0" cellpadding="4">
+      <tr>
+        <td valign="top" class="maintable">
+          {GetMenu():h}
+        </td>
+        <td valign="top">
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class=maintable>
+              <tr><th colspan="2">{form.header.header:h}</th></tr><tr>
+              <tr><td class="label"> {form.beg_date.label:h}        </td><td class="control"> {form.beg_date.html:h}        </td></tr>
+              <tr><td class="label"> {form.end_date.label:h}        </td><td class="control"> {form.end_date.html:h}        </td></tr>
+              <tr><td class="label"> {form.name.label:h}            </td><td class="control"> {form.name.html:h}            </td></tr>
+              <tr><td class="label"> {form.diagnosis.label:h}       </td><td class="control"> {form.diagnosis.html:h}       </td></tr>
+              <tr><td class="label"> {form.operation.label:h}            </td><td class="control"> {form.operation.html:h}  </td></tr>
+
+              <tr><td class="label"> {form.recommendation.label:h}  </td><td class="control"> {form.recommendation.html:h}  </td></tr>
+              <tr><td class="label"> {form.notes.label:h}           </td><td class="control"> {form.notes.html:h}            </td></tr>
+              <tr><td>&nbsp;</td>                                          <td align="right"> {form.do_Save.html:h} {form.do_Cancel.html:h} </td>
+              </tr>
+            </table>
+<!--            <table>
+              <tr><td>{form.requirednote:h}</td></tr>
+            </table>
+-->
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

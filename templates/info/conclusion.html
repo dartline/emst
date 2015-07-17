@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon">
+    <title>{GetUserName()}: Заключение о степени тяжести травмы</title>
+  </head>
+
+  <body>
+    {if:popup_url}
+        <flexy:toJavascript popup_url="popup_url">
+        </flexy:toJavascript>
+        <script language="javascript"><!--
+            var s =  popup_url;
+            var vWnd = window.open(popup_url, "rg_print_popup", "location=0; menubar=0; resizable=1; scrollbars=0; status=0; toolbar=0;");
+            vWnd.focus();
+        --></script>
+    {end:}
+
+    <table cellspacing="0" cellpadding="4">
+      <tr>
+        <td valign="top" class="maintable">
+          {GetMenu():h}
+        </td>
+        <td valign="top">
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class=maintable>
+              <tr><th colspan="2">{form.header.header:h}</th></tr><tr>
+              <tr><td class="label"> {form.case_id.label:h}         </td><td class="control"> {form.case_id.html:h}         </td></tr>
+              <tr><td class="label"> {form.last_name.label:h}       </td><td class="control"> {form.last_name.html:h}       </td></tr>
+              <tr><td class="label"> {form.first_name.label:h}      </td><td class="control"> {form.first_name.html:h}      </td></tr>
+              <tr><td class="label"> {form.patr_name.label:h}       </td><td class="control"> {form.patr_name.html:h}       </td></tr>
+              <tr><td class="label"> {form.born_date.label:h}       </td><td class="control"> {form.born_date.html:h}       </td></tr>
+              <tr><td class="label"> {form.employment_place.label:h}</td><td class="control"> {form.employment_place.html:h}</td></tr>
+              <tr><td class="label"> {form.profession.label:h}      </td><td class="control"> {form.profession.html:h}      </td></tr>
+              <tr><td class="label"> {form.diagnosis.label:h}       </td><td class="control"> {form.diagnosis.html:h}       </td></tr>
+              <tr><td class="label"> {form.diagnosis_mkb.label:h}   </td><td class="control"> {form.diagnosis_mkb.html:h}   </td></tr>
+              <tr><td class="label"> {form.heavity.label:h}         </td><td class="control" colspan="7"> {form.heavity.html:h}         </td></tr>
+              <tr><td  colspan="2" align="right"> {form.do_Print.html:h} {form.do_Save.html:h} {form.do_Cancel.html:h} </td>
+              </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

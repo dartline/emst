@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Refresh"      content="300">
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon" >
+    <title>{GetUserName()}: Врач: Список историй болезни</title>
+  </head>
+
+  <body>
+    <table cellspacing="0" cellpadding="4">
+      <tr>
+        <td valign="top" class="maintable" >
+          {GetMenu():h}
+        </td>
+        <td valign="top">
+          <h1>Список историй болезни</h1>
+          {GetTable():h}
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class=maintable>
+              <tr>
+                <td colspan="6"><hr></td>
+              </tr>
+              <tr>
+                <th colspan="6">{form.header.Header:h}</th>
+              </tr>
+              <tr>
+                <td class="label"  > {form.case_id.label:h} </td>
+                <td class="control"> {form.case_id.html:h}  </td>
+                <td class="label"  > {form.doctor_id.label:h} </td>
+                <td class="control"> {form.doctor_id.html:h}  </td>
+                <td class="label"  > {form.paytype.label:h} </td>
+                <td class="control"> {form.paytype.html:h}  </td>
+              </tr>
+              <tr>
+                <td class="label"  > {form.last_name.label:h} </td>
+                <td class="control"> {form.last_name.html:h}  </td>
+                <td class="label"  > {form.first_name.label:h} </td>
+                <td class="control"> {form.first_name.html:h}  </td>
+                <td class="label"  > {form.patr_name.label:h} </td>
+                <td class="control"> {form.patr_name.html:h}  </td>
+              </tr>
+              <tr>
+                <td class="label"  > {form.beg_date.label:h} </td>
+                <td class="control"> {form.beg_date.html:h}  </td>
+                <td class="label"  > {form.end_date.label:h} </td>
+                <td class="control"> {form.end_date.html:h}  </td>
+                <td class="label"  > &nbsp; </td>
+                <td class="control"> &nbsp; </td>
+              </tr>
+
+              <tr>
+                <td colspan="6" align="right">{form.Submit.html:h}</td>
+              </tr>
+            </table>
+          </form>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

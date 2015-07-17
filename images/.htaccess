@@ -1,0 +1,4 @@
+<Limit GET POST>
+</Limit>
+AuthName "/htdocs/green"
+ErrorDocument 404 /default.html

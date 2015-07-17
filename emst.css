@@ -1,0 +1,280 @@
+.free {
+color: #C0C0C0;
+}
+.over {
+background-color:#000000;color:#000080
+}
+
+.star {
+COLOR: #CC0000;
+FONT-SIZE: 9px;
+}
+
+.link_top {
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif";
+FONT-SIZE: 11px;
+COLOR: #CC3300;
+}
+
+.tbox1 {
+FONT-SIZE: 11px;
+WIDTH: 180px;
+background-color: #F7F7F7;
+COLOR: #0000e6;
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox2 {
+FONT-SIZE: 11px;
+WIDTH: 60px;
+background-color: #F7F7F7;
+COLOR: #0000e6;
+FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox3 {
+FONT-SIZE: 11px;
+WIDTH: 250px;
+COLOR: #0000e6;
+background-color: #F7F7F7;
+FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox4 {
+FONT-SIZE: 11px;
+WIDTH: 120px;
+background-color: #F7F7F7;
+COLOR: #0000e6;
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox5 {
+FONT-SIZE: 11px;
+WIDTH: 250px;
+COLOR: #0000e6;
+background-color: #F7F7F7;
+FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox6 {
+FONT-SIZE: 11px;
+WIDTH: 30px;
+background-color: #F7F7F7;
+COLOR: #0000e6;
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif"
+}
+
+.tbox7 {
+FONT-SIZE: 11px;
+WIDTH: 420px;
+COLOR: #0000e6;
+background-color: #F7F7F7;
+FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif"
+}
+
+.bigChange {
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif";
+FONT-SIZE: 11px;
+COLOR: Black;
+background-color: #DBDBDB;
+}
+
+.start {
+COLOR: #CC3300;
+FONT-FAMILY: "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif";
+FONT-SIZE: 11px;
+background-color: #F0F0F0;
+}
+
+P {
+FONT-SIZE: 11px;
+FONT-FAMILY: "Verdana", "sans-serif", "Arial", "Helvetica";
+}
+
+.txt {
+FONT-SIZE: 11px;
+}
+
+ul {
+LIST-STYLE-TYPE: circle;
+}
+
+TD {
+FONT-SIZE: 11px;
+FONT-FAMILY: "Verdana", "sans-serif", "Arial", "Helvetica";
+}
+
+.tabheader {
+FONT-SIZE: 11px;
+color: #000000;
+background-color: #CCCCFF;
+FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif";
+}
+
+body {
+font-family: "Verdana", "sans-serif", "Arial", "Helvetica";
+background: #f9f9f9;
+font-size: 10px;
+margin-left: 5px;
+margin-top: 5px;
+margin-bottom: 0px;
+margin-right: 0px;
+padding: 0px;
+color: #000000;
+}
+
+h1 {
+font-weight: bold;
+font-size: 11px;
+border-bottom: 1px #8CACBB solid;
+padding=5px;
+}
+
+a {
+color: #0000BB;
+font-size: 11px;
+text-decoration: none;
+}
+
+a:link {
+color: #0000000;
+text-decoration: none;
+}
+
+a:active {
+color: #000000;
+text-decoration: none;
+}
+
+a:hover {
+color: #000080;
+text-decoration: underline;
+}
+
+th {
+font-weight: bold;
+background-color: #DEE7EC;
+color: black;
+text-align: center;
+}
+
+.tabheader
+ {
+font-weight: bold;
+background-color: #DEE7EC;
+color: black;
+text-align: center;
+}
+
+.tabrow0 {
+background-color: #EEEEEE;
+}
+
+.tabrow1 {
+background-color: #CCCCCC;
+}
+
+
+.errors {
+font-family:sans-serif; color:#000; background-color:#FFF; font-size:12pt;
+}
+
+.label  {
+font-family: sans-serif;
+color: #000070;
+font-size: 11px;
+text-align: right;
+vertical-align: top;
+white-space: nowrap;
+}
+
+.ctrl   {
+font-family:sans-serif;             background-color:#EEEEEE;                 text-align:left;                       white-space:nowrap;
+}
+
+.note   {
+font-family:sans-serif; color:#AAA; background-color:#EEE; font-size:10pt; text-align:center;                     white-space:nowrap;
+}
+
+.maintable {
+border:thin #D0D0D0; background-color:#EEEEEE;
+}
+
+.menuheader  {
+font-size: 11px;
+}
+
+.menuaction  {
+}
+
+.edt_avg  {
+width: 180px;
+}
+
+.edt_wide {
+width: 370px;
+}
+
+.edt_dim {
+width: 180px;
+}
+
+.edt_norm {
+width: 100px;
+}
+
+.edt_tiny {
+width: 45px;
+}
+
+.edt_100 {
+width: 100%;
+}
+
+
+input {
+font-size: 100%
+}
+
+select {
+font-size: 100%
+}
+
+
+input.bigred {
+font-weight: bold; background: #FF6666;
+}
+
+input.flat_active {
+Border-color: black;
+Border-width: thin;
+border-style: solid;
+background: #DEE7EC;
+font-size: 100%
+}
+
+input.flat_passive {
+Border-color: black;
+Border-width: thin;
+border-style: solid;
+background: #EEEEEE;
+font-size: 100%
+}
+
+input.flat_active_cec {
+Border-color: black;
+Border-width: thin;
+border-style: solid;
+background: #88aaf5;
+font-size: 100%
+}
+
+input.flat_passive_cec {
+Border-color: black;
+Border-width: thin;
+border-style: solid;
+backgroundw: #EEEEFF;
+background: #88aaf5;
+font-size: 100%
+}
+

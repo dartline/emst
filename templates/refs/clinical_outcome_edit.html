@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon" >
+    <title>{GetUserName()}: Администратор: Создание/изменение описания исхода</title>
+  </head>
+
+  <body>
+    <table cellspacing="0" cellpadding="4">
+      <tr>
+        <td valign="top" class="maintable">
+          {GetMenu():h}
+        </td>
+        <td valign="top">
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class=maintable>
+              <tr>
+                <th colspan="2">{form.header.header:h}</th>
+              </tr>
+              <tr>
+               <td class="label"  > {form.name.label:h} </td>
+               <td class="control"> {form.name.html:h}  </td>
+              </tr>
+              <tr>
+               <td class="label"  > {form.can_skip_ill_doc_on_disability.label:h} </td>
+               <td class="control"> {form.can_skip_ill_doc_on_disability.html:h}  </td>
+              </tr>
+              <tr>
+               <td class="label"  > {form.can_use_ill_doc_in_ability.label:h} </td>
+               <td class="control"> {form.can_use_ill_doc_in_ability.html:h}  </td>
+              </tr>
+              <tr>
+               <td class="label"  > {form.req_epicrisis.label:h} </td>
+               <td class="control"> {form.req_epicrisis.html:h}  </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td align="right">{form.Submit.html:h}</td>
+              </tr>
+            </table>
+            <table>
+              <tr><td>{form.requirednote:h}</td></tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

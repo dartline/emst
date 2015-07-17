@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../emst.css" type="text/css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon">
+    <title>{GetUserName()}: Врач: направление на рентгенологическое исследование</title>
+  </head>
+
+  <body>
+    {if:popup_url}
+        <flexy:toJavascript popup_url="popup_url">
+        </flexy:toJavascript>
+        <script language="javascript"><!--
+            var s =  popup_url;
+            var vWnd = window.open(popup_url, "print_popup", "location=0; menubar=0; resizable=1; scrollbars=0; status=0; toolbar=0;");
+            vWnd.focus();
+        --></script>
+    {end:}
+
+    <table cellspacing="0" cellpadding="4">
+      <tr>
+        <td valign="top" class="maintable">
+          {GetMenu():h}
+        </td>
+        <td valign="top">
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class=maintable>
+              <tr><th colspan="8">{form.header.header:h}</th></tr><tr>
+              <tr><td class="label"> {form.case_id.label:h}         </td><td class="control" colspan="7"> {form.case_id.html:h}         </td></tr>
+              <tr><td class="label"> {form.last_name.label:h}       </td><td class="control" colspan="7"> {form.last_name.html:h}       </td></tr>
+              <tr><td class="label"> {form.first_name.label:h}      </td><td class="control" colspan="7"> {form.first_name.html:h}      </td></tr>
+              <tr><td class="label"> {form.patr_name.label:h}       </td><td class="control" colspan="7"> {form.patr_name.html:h}       </td></tr>
+              <tr><td class="label"> {form.is_male.label:h}         </td><td class="control" colspan="7"> {form.is_male.html:h}         </td></tr>
+              <tr><td class="label"> {form.born_date.label:h}       </td><td class="control" colspan="7"> {form.born_date.html:h}       </td></tr>
+
+              <tr>
+                <td class="label"  > {form.doc_type_id.label:h} </td>
+                <td class="control"> {form.doc_type_id.html:h}  </td>
+                <td class="label"  > {form.doc_series.label:h}  </td>
+                <td class="control"> {form.doc_series.html:h}   </td>
+                <td class="label"  > {form.doc_number.label:h}  </td>
+                <td class="control" colspan="3"> {form.doc_number.html:h}   </td>
+              </tr>
+
+              <tr>
+                <td class="label"  > {form.addr_phys_street.label:h}    </td>
+                <td class="control"> {form.addr_phys_street.html:h}     </td>
+                <td class="label"  > {form.addr_phys_num.label:h}       </td>
+                <td class="control"> {form.addr_phys_num.html:h}        </td>
+                <td class="label"  > {form.addr_phys_subnum.label:h}    </td>
+                <td class="control"> {form.addr_phys_subnum.html:h}     </td>
+                <td class="label"  > {form.addr_phys_apartment.label:h} </td>
+                <td class="control"> {form.addr_phys_apartment.html:h}  </td>
+              </tr>
+
+              <tr><td class="label"  > {form.phone.label:h}           </td><td class="control" colspan="7"> {form.phone.html:h}           </td></tr>
+              <tr><td class="label"  > {form.employment_place.label:h}</td><td class="control" colspan="7"> {form.employment_place.html:h}</td></tr>
+              <tr><td class="label"  > {form.profession.label:h}      </td><td class="control" colspan="7"> {form.profession.html:h}      </td></tr>
+
+              <tr>
+                <td class="label"  > {form.insurance_company_id.label:h}</td>
+                <td class="control"> {form.insurance_company_id.html:h}</td>
+                <td class="label"  > {form.polis_series.label:h}</td>
+                <td class="control"> {form.polis_series.html:h}</td>
+                <td class="label"  > {form.polis_number.label:h}</td>
+                <td class="control" colspan="3"> {form.polis_number.html:h}</td>
+              </tr>
+
+              <tr><td class="label"> {form.date.label:h}            </td><td class="control" colspan="7"> {form.date.html:h}            </td></tr>
+              <tr><td class="label"> {form.objective.label:h}       </td><td class="control" colspan="7"> {form.objective.html:h}       </td></tr>
+              <tr><td class="label"> {form.area.label:h}            </td><td class="control" colspan="7"> {form.area.html:h}            </td></tr>
+              <tr><td class="label"> {form.diagnosis.label:h}       </td><td class="control" colspan="7"> {form.diagnosis.html:h}       </td></tr>
+              <tr><td class="label"> {form.done.label:h}            </td><td class="control" colspan="7"> {form.done.html:h}            </td></tr>
+              <tr><td class="label"> {form.description.label:h}     </td><td class="control" colspan="7"> {form.description.html:h}     </td></tr>
+              <tr><td  colspan="8" align="right"> {form.do_Print.html:h} {form.do_Save.html:h} {form.do_Cancel.html:h} </td>
+              </tr>
+            </table>
+<!--            <table>
+              <tr><td>{form.requirednote:h}</td></tr>
+            </table>
+-->
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

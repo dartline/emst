@@ -1,0 +1,22 @@
+#php_value error_reporting 15
+
+#; diasble add ?PHPSID=
+php_value session.use_trans_sid 0
+
+#; disable auto quoting
+php_value magic_quotes_gpc 0
+php_value magic_quotes_runtime 0
+
+#; disable auto add global vars (Env/Form Fields etc.)
+php_value register_globals 0
+
+
+# NC=no case,
+# QSA=query string append
+RewriteEngine On
+RewriteRule ^(.*)\.html$ index.php?page=$1 [QSA,NC]
+RewriteRule ^(.*)\.htm$  index.php?page=$1 [QSA,NC]
+RewriteRule ^(.*)\.pdf$  index.php?page=$1_pdf [QSA,NC]
+RewriteRule ^(.*)\.dbf$  index.php?page=$1_dbf [QSA,NC]
+
+# AddDefaultCharset cp-1251

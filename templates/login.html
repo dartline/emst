@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="emst.css" rel="stylesheet" type="text/css">
+    <link href="favicon.ico" rel="shortcut icon" >
+    <title>{GetProjectName()}: Login page</title>
+  </head>
+
+  <body>
+    <table width="100%" height="100%">
+      <tr>
+        <td align="center" valign="middle" width="100%">
+          {form.outputHeader():h}
+            {form.hidden:h}
+            <table class="maintable">
+      {if:Message}
+              <tr>
+                <th colspan="2">{Message:h}</th>
+              </tr>
+      {end:}
+              <tr>
+                <th colspan="2">{form.header.Header:h}</th>
+              </tr>
+              <tr>
+                <td class="label"  > {form.Name.label:h} </td>
+                <td class="control"> {form.Name.html:h}  </td>
+              </tr>
+              <tr>
+                <td class="label"  > {form.Password.label:h} </td>
+                <td class="control"> {form.Password.html:h}  </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td align="right">{form.Submit.html:h}</td>
+              </tr>
+            </table>
+      <!--
+            <table>
+              <tr><td>{form.requirednote:h}</td></tr>
+            </table>
+      -->
+            </form>
+      <!--
+
+          <p>
+            for admin login use user name <b>admin</b> and password <b>admin</b><br>
+          </p>
+      -->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

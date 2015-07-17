@@ -1,0 +1,72 @@
+SELECT id, create_time, born_date, disability_from_date, 
+
+(SELECT max(ill_end_date) FROM emst_surgeries WHERE emst_surgeries.case_id = emst_cases.id) as ill_end_date
+
+FROM emst_cases 
+
+WHERE disability_from_date != '0000-00-00'
+
+---
+Показывает записи 0 - 5105 (5,106 всего, Запрос занял 0.1555 сек)
+----------------------------------------------
+1 PRIMARY emst_cases ALL disability_from_date NULL NULL NULL 5722 Using where 
+2 DEPENDENT SUBQUERY emst_surgeries ref case_histoty_id,tx case_histoty_id 4 emst.emst_cases.id 1   
+----------------------------------------------
+
+SELECT 
+  emst_cases.id as id, 
+  emst_cases.born_date, 
+  emst_cases.is_male, 
+  DATEDIFF( max(emst_surgeries.ill_end_date), emst_cases.disability_from_date) as days
+FROM
+  emst_cases 
+  JOIN emst_surgeries ON emst_surgeries.case_id = emst_cases.id
+WHERE 
+  emst_cases.disability_from_date != '0000-00-00' AND
+  emst_cases.create_time >= '2006-01-01' AND
+  emst_cases.create_time < '2007-01-01'
+GROUP BY
+  emst_cases.id  
+---
+Показывает записи 0 - 29 (5,106 всего, Запрос занял 0.1354 сек)
+----------------------------------------------
+1 SIMPLE emst_cases index PRIMARY,disability_from_date PRIMARY 4 NULL 6128 Using where 
+1 SIMPLE emst_surgeries ref case_histoty_id,tx case_histoty_id 4 emst.emst_cases.id 1   
+----------------------------------------------
+
+
+SELECT 
+  emst_cases.id as id, 
+  emst_cases.born_date, 
+  emst_cases.is_male, 
+max(emst_surgeries.ill_end_date),
+emst_cases.disability_from_date,
+  DATEDIFF( max(emst_surgeries.ill_end_date), emst_cases.disability_from_date) as days
+FROM
+  emst_cases 
+  JOIN emst_surgeries ON emst_surgeries.case_id = emst_cases.id
+WHERE 
+  emst_surgeries.disability=2 AND 
+  emst_surgeries.ill_end_date != '0000-00-00' AND
+  emst_cases.disability_from_date != '0000-00-00' AND
+  emst_cases.create_time >= '2006-01-01' AND
+  emst_cases.create_time < '2007-01-01'
+GROUP BY
+  emst_cases.id  
+----------
+SELECT 
+  emst_cases.id AS id, 
+  emst_cases.born_date, 
+  emst_cases.is_male, 
+  DATEDIFF( max( emst_surgeries.ill_end_date ), 
+  emst_cases.disability_from_date ) AS days
+FROM 
+  emst_cases
+  JOIN emst_surgeries ON emst_surgeries.case_id = emst_cases.id
+WHERE 
+emst_surgeries.disability =2
+AND emst_surgeries.ill_end_date != '0000-00-00'
+AND emst_cases.disability_from_date != '0000-00-00'
+AND emst_cases.create_time >= '2006-01-01'
+AND emst_cases.create_time < '2007-01-01'
+----------
