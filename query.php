@@ -3,8 +3,8 @@
 	$unixTime = time();
 	$nowDate = date('Y-m-d',$unixTime);
 	$args = array_merge($_GET,$_POST);
-	if(!isset($args['dateBegin']))$args['dateBegin'] = $nowDate; else{
-		if($args['dateBegin'] == '')$args['dateBegin'] = $nowDate;
+	if(!isset($args['dateBegin']))$args['dateBegin'] = '1991-01-01'; else{
+		if($args['dateBegin'] == '')$args['dateBegin'] = '1991-01-01';
 	}
 	if(!isset($args['timeBegin']))$args['timeBegin'] = '00:00'; else{
 		if($args['timeBegin'] == '')$args['timeBegin'] = '00:00';
