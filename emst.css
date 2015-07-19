@@ -113,8 +113,8 @@ FONT-FAMILY: "Verdana", "Geneva",  "Arial", "Helvetica", "sans-serif";
 
 body {
 font-family: "Verdana", "sans-serif", "Arial", "Helvetica";
-  background: #C8C9F7;
-  background: linear-gradient(to bottom,#E4E4E4 0%,#AFAFDF 100%);
+  background: #03054C;
+  background: linear-gradient(to bottom,#0018C0 0%,#1D9D01 100%);
   
 font-size: 14px;
 margin-left: 5px;
@@ -280,3 +280,7 @@ background: #88aaf5;
 font-size: 100%
 }
 
+
+*{
+	font-size:16px !important;
+}
