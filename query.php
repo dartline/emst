@@ -64,7 +64,7 @@
 	CONCAT(`emst_cases`.`first_name`,' ',`emst_cases`.`last_name`,' ',`emst_cases`.`patr_name`) AS `ФИО пациента`,
 	`emst_surgeries`.`date` AS `Дата явки`,
 	`users`.`login` AS `Фамилия врача`,
-	`emst_surgeries`.`date` AS `Диагноз`
+	`emst_surgeries`.`diagnosis` AS `Диагноз`
 	FROM `emst_surgeries` 
 	LEFT JOIN `emst_cases` ON `emst_cases`.`id` = `emst_surgeries`.`case_id` 
 	LEFT JOIN `users` ON `users`.`id` = `emst_surgeries`.`user_id` 
